@@ -12,4 +12,3 @@ class User(AbstractModel):
     email = Column('email', String, unique=True, nullable=False)
     password = Column('password', String, unique=True, nullable=False)
     is_Admin = Column('is_Admin', Boolean, default=False)
-

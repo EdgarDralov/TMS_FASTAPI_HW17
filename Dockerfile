@@ -12,6 +12,9 @@ COPY Pipfile.lock .
 
 RUN pipenv install --system --deploy --ignore-pipfile
 
+COPY entrypoint.sh .
+RUN chmod +x entrypoint.sh
+
 COPY . .
 
-CMD ["uvicorn", "main:app", "--reload", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["sh", "entrypoint.sh"]
